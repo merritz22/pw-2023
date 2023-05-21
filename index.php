@@ -41,7 +41,7 @@
       <?php require_once('./views/parts/nav.php') ?>
       <div class="pxtext">
         <span class="border">
-          Nike Air Jordan
+          Nike
         </span>
         <p><a href="<?php echo($_APP['route']['hommes']) ?>">Acheter maintenant</a></p>
       </div>
