@@ -29,89 +29,21 @@
     <div class="se-pre-con"></div>
     <?php require_once('./parts/nav.php') ?>
     <section>
-      <h1>a</h1>
-      <h2>Trending</h2>
-      <p>Our most trendy collection</p>
+      <h1>CATALOGUE</h1>
+      <h2>Tendance</h2>
+      <p>Nos meilleurs produits</p>
       <div class="items">
         <div class="card">
-          <img src="../Images/img-Nike1.jpg" alt="Shoe" style="width:100%" />
+          <img src="http://localhost/pw-2023/ressources/images/img-Nike1.jpg" alt="Shoe" style="width:100%" />
           <h3>Nike Free RN OC</h3>
-          <p class="price">$399.99</p>
-          <p><a href="info.html">Learn More</a></p>
+          <p class="price">4000 FCFA</p>
+          <p><a href="info.html">En savoir plus</a></p>
         </div>
         <div class="card">
-          <img src="../Images/nike-6.jpg" alt="Shoe" style="width:100%" />
+          <img src="http://localhost/pw-2023/ressources/images/nike-6.jpg" alt="Shoe" style="width:100%" />
           <h3>Nike Free RN OC</h3>
-          <p class="price">$299.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike3.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Air Max (Blue)</h3>
-          <p class="price">$199.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike4.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Air Max (Pink & white)</h3>
-          <p class="price">$399.99</p>
-          <p><a href="info.html">Learn More </a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike5.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Air Max (white)</h3>
-          <p class="price">$400.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-nike7.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Run 4.0</h3>
-          <p class="price">$199.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img
-            src="../Images/img-nike-jordan.jpg"
-            alt="Shoe"
-            style="width:100%"
-          />
-          <h3>Nike + Jordan (Special Edition)</h3>
-          <p class="price">$199.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img
-            src="../Images/img-nike-jays.jpg"
-            alt="Shoe"
-            style="width:100%"
-          />
-          <h3>Nike Canvas</h3>
-          <p class="price">$99.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike9.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Air Force One (Yellow)</h3>
-          <p class="price">$199.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike10.jpg"Shoe" style="width:100%">
-          <h3>Nike Air Max (Yellow)</h3>
-          <p class="price">$199.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike11.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike + Jordan (Special Edition) Purple</h3>
-          <p class="price">$599.99</p>
-          <p><a href="info.html">Learn More</a></p>
-        </div>
-        <div class="card">
-          <img src="../Images/img-Nike12.jpg" alt="Shoe" style="width:100%" />
-          <h3>Nike Air</h3>
-          <p class="price">$399.99</p>
-          <p><a href="info.html">Learn More</a></p>
+          <p class="price">6600 FCFA</p>
+          <p><a href="info.html">En savoir plus</a></p>
         </div>
       </div>
     </section>
