@@ -54,40 +54,40 @@
       >
         <div class="col">
           <div class="overlay-image">
-            <a href="HTML/men.html">
-              <img class="image" src="./Images/img-men6.jpg" alt="Alt text" />
+            <a href="<?php echo($_APP['route']['hommes']) ?>">
+              <img class="image" src="<?php echo($_APP['images']['men3']) ?>" alt="Alt text" />
               <div class="normal">
-                <div class="text">MEN</div>
+                <div class="text">HOMME</div>
               </div>
               <div class="hover">
                 <img
                   class="image"
-                  src="./Images/img-Nike12.jpg"
+                  src="<?php echo($_APP['images']['nike12']) ?>"
                   alt="Alt text hover"
                 />
-                <div class="text">MEN</div>
+                <div class="text">HOMME</div>
               </div>
             </a>
           </div>
         </div>
         <div class="col">
           <div class="overlay-image">
-            <a href="HTML/women.html">
+            <a href="<?php echo($_APP['route']['femmes']) ?>">
               <img
                 class="image"
-                src="./Images/img-women5.jpeg"
+                src="<?php echo($_APP['images']['women5']) ?>"
                 alt="Alt text"
               />
               <div class="normal">
-                <div class="text">WOMEN</div>
+                <div class="text">FEMMES</div>
               </div>
               <div class="hover">
                 <img
                   class="image"
-                  src="./Images/img-women6.jpeg"
+                  src="<?php echo($_APP['images']['women6']) ?>"
                   alt="Alt text hover"
                 />
-                <div class="text">WOMEN</div>
+                <div class="text">FEMMES</div>
               </div>
             </a>
           </div>
@@ -95,7 +95,7 @@
       </div>
     </section>
     <section class="preview">
-      <h2 align="center">Best Sellers</h2>
+      <h2 align="center">Les plus vendus</h2>
       <div
         class="row"
         style="  width: 80%;
@@ -127,69 +127,6 @@
         </figure>
       </div>
     </section>
-
-    <h3 style="text-align: center">
-      <a href="./HTML/survey.html">Click here to take a quick survey</a>
-    </h3>
-
-    <footer>
-      <div class="row foot">
-        <div class="col">
-          <h1>Downy Shoes</h1>
-          <p>
-            Official <a href="https://www.nike.com/xf/en_gb/">Nike</a> Partner
-          </p>
-        </div>
-        <div class="col">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="./HTML/shop.html">Catalog</a></li>
-
-            <li><a href="./HTML/Contact-us.html">Contact us</a></li>
-            <li><a href="./HTML/survey.html">Take a survey</a></li>
-            <li>
-              <a href="./HTML/terms-and-conditions.html"
-                >Terms and conditions</a
-              >
-            </li>
-            <li>
-              <a href="./HTML/refund-policy.html">Refund Policy</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col">
-          <h2>
-            Copyright <sup>©</sup>
-            <a href="https://www.codepen.io/jeetg57" target="_blank"
-              >Jeet Gohil</a
-            >
-          </h2>
-        </div>
-      </div>
-    </footer>
-    <footer id="footer-social">
-      <ul class="row foot-icons" style="list-style-type: none;">
-        <li>
-          <a href="https://twitter.com/JeetGohil_" target="_blank">
-            <i class="fab fa-twitter fa-3x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/MarioJT99" target="_blank">
-            <i class="fab fa-facebook fa-3x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.codepen.io/jeetg57" target="_blank">
-            <i class="fab fa-codepen fa-3x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/Jeetg57" target="_blank">
-            <i class="fab fa-github fa-3x"></i>
-          </a>
-        </li>
-      </ul>
-    </footer>
+    <?php require_once("./views/parts/footer.php") ?>
   </body>
 </html>

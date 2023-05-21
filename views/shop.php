@@ -1,17 +1,20 @@
+<?php
+      $_APP = parse_ini_file('./../env.ini', true); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" type="image/x-icon" href="../Images/img-DS.png" />
-    <title>Downy Shoes</title>
-    <link rel="stylesheet" href="../css/shop.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo($_APP['app']['ico-link']) ?>" />
+    <title><?php echo($_APP['app']['name']) ?></title>
+    <link rel="stylesheet" href="./css/shop.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/preloader.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/preloader.css" />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -19,33 +22,14 @@
       crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="../js/preloader.js"></script>
+    <script src="./js/preloader.js"></script>
   </head>
 
   <body>
     <div class="se-pre-con"></div>
-    <header>
-      <nav>
-        <ul>
-          <li class="primary-nav">
-            <img src="../Images/img-DS.png" alt="logo" />
-            <a href="../index.html">DOWNY SHOES</a>
-          </li>
-          <li class="secondary-nav">
-            <a href="../HTML/checkout.html">
-              <i class="fas fa-shopping-cart"></i> CART
-            </a>
-          </li>
-          <li class="secondary-nav"><a href="../HTML/women.html">WOMEN</a></li>
-          <li class="secondary-nav"><a href="../HTML/men.html">MEN</a></li>
-          <li class="secondary-nav">
-            <a href="../HTML/about-us.html">ABOUT US</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <?php require_once('./parts/nav.php') ?>
     <section>
-      <h1>CATALOG</h1>
+      <h1>a</h1>
       <h2>Trending</h2>
       <p>Our most trendy collection</p>
       <div class="items">
