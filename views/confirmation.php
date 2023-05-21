@@ -1,3 +1,5 @@
+<?php
+      $_APP = parse_ini_file('./../env.ini', true); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,11 +29,11 @@
       font-size: 50px;
     }
     a:hover {
-      color: paleturquoise;
+      color: cadetblue;
     }
   </style>
   <body>
-    <h1>Checkout Successful</h1>
-    <p><a href="../index.html">Click here to go back</a></p>
+    <h1>Achat realisez avec succes</h1>
+    <p><a href="<?php echo($_APP['route']['accueil']) ?>">Clickez ici pour l'Accueil</a></p>
   </body>
 </html>
