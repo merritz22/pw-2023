@@ -3,6 +3,7 @@
     require_once('./databases/PDOConnection.php');
     require_once('./controllers/AccountFunction.php');
     require_once('./controllers/CheckoutFunction.php');
+    require_once('./controllers/ShoesFunction.php');
     
     session_start();
 
@@ -16,7 +17,6 @@
       $panier = getCheckout($db, $user[0]['id']);
       // var_dump(count($panier));
       if(count($user) == 0){
-        
         header("Location:".$_APP['route']['connexion']);
       }
       else{
@@ -83,14 +83,19 @@
         <div class="col">
           <div class="overlay-image">
             <a href="<?php echo($_APP['route']['hommes']) ?>">
-              <img class="image" src="<?php echo($_APP['images']['men3']) ?>" alt="Alt text" />
+            <?php 
+              $homme = getAllTypeShoes($db,3);
+              $femme = getAllTypeShoes($db,2);
+              // var_dump($homme[0]);
+            ?>
+              <img class="image" src="<?php echo($_APP['images']['men'].$homme[0]['image']) ?>" alt="Alt text" />
               <div class="normal">
                 <div class="text">HOMME</div>
               </div>
               <div class="hover">
                 <img
                   class="image"
-                  src="<?php echo($_APP['images']['nike12']) ?>"
+                  src="<?php echo($_APP['images']['men'].$homme[1]['image']) ?>"
                   alt="Alt text hover"
                 />
                 <div class="text">HOMME</div>
@@ -103,7 +108,7 @@
             <a href="<?php echo($_APP['route']['femmes']) ?>">
               <img
                 class="image"
-                src="<?php echo($_APP['images']['women5']) ?>"
+                src="<?php echo($_APP['images']['fem'].$femme[0]['image']) ?>"
                 alt="Alt text"
               />
               <div class="normal">
@@ -112,7 +117,7 @@
               <div class="hover">
                 <img
                   class="image"
-                  src="<?php echo($_APP['images']['women6']) ?>"
+                  src="<?php echo($_APP['images']['fem'].$femme[1]['image']) ?>"
                   alt="Alt text hover"
                 />
                 <div class="text">FEMMES</div>

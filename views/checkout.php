@@ -1,5 +1,23 @@
 <?php
-      $_APP = parse_ini_file('./../env.ini', true); ?>
+  $_APP = parse_ini_file('./../env.ini', true);
+  require_once('./../databases/PDOConnection.php');
+  require_once('./../controllers/AccountFunction.php');
+  require_once('./../controllers/CheckoutFunction.php');
+  require_once('./../controllers/ShoesFunction.php');
+  require_once('./../controllers/CategorieFunction.php');
+  
+  session_start();
+
+  $db = connection('./../env.ini');
+
+  if(isset($_SESSION)){
+    $panier = getCheckout($db, $_SESSION['user']);
+    $_SESSION['panier'] = count($panier);
+  }else{
+    header("Location:".$_APP['route']['connexion']);
+  }
+  $total = 0;
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,62 +51,35 @@
       <div class="row">
         <div class="column">
           <h5>Veuillez choisir les quantites</h5>
-          <div class="cart-item" id="item">
-            <img src="../Images/img-Nike1.jpg" alt="" />
-            <p>Nike Air Max (Red)</p>
-            <p>6 500 Frs</p>
-            <input
-              type="number"
-              name="quantity"
-              id="no-of-items"
-              value="1"
-              min="1"
-              max="6"
-              step="1"
-            />
-            <button id="remove" class="remove">
-              <i class="fas fa-trash fa-2x"></i>
-            </button>
-          </div>
-          <div class="cart-item" id="item1">
-            <img src="../Images/img-Nike4.jpg" alt="" />
-            <p>Nike Air Max (Pink)</p>
-            <p>15 000 Frs</p>
-            <input
-              type="number"
-              name="quantity"
-              id="no-of-items"
-              value="1"
-              min="1"
-              max="6"
-              step="1"
-            />
-            <button id="remove2" class="remove">
-              <i class="fas fa-trash fa-2x"></i>
-            </button>
-          </div>
-          <div class="cart-item" id="item2">
-            <img src="../Images/img-Nike3.jpg" alt="" />
-            <p>Nike Air Max (Blue)</p>
-            <p>25 050 Frs</p>
-            <input
-              type="number"
-              name="quantity"
-              id="no-of-items"
-              value="1"
-              min="1"
-              max="6"
-              step="1"
-            />
-            <button id="remove3" class="remove">
-              <i class="fas fa-trash fa-2x"></i>
-            </button>
-          </div>
+          <?php foreach ($panier as $key => $value) {
+            $shoe = getCheckoutShoes($db,$value['id_produit']);
+            $type = getShoeType($db,$shoe['id']);
+            $total+=$shoe['prix']*$value['qte'];
+            // var_dump($shoe);
+            ?>
+            <div class="cart-item" id="item">
+              <img src="<?php echo($_APP['images']['unknown']) ?>/<?php echo($type['nom']) ?>/<?php echo($shoe['image']) ?>" alt="" />
+              <p><?php echo($shoe['nom']) ?></p>
+              <p><?php echo($shoe['prix']) ?></p>
+              <input
+                type="number"
+                name="quantity"
+                id="no-of-items"
+                value="<?php echo($value['qte']) ?>"
+                min="1"
+                max="6"
+                step="1"
+              />
+              <button id="remove" class="remove">
+                <i class="fas fa-trash fa-2x"></i>
+              </button>
+            </div>
+          <?php } ?>
           <hr />
         </div>
         <div class="column2">
           <h3>Comptabilite</h3>
-          <h3>Totals &nbsp; &nbsp; 46 550 Frs</h3>
+          <h3>Totals &nbsp; &nbsp; <?php echo($total) ?></h3>
           <div class="buttons">
             <a class="button-checkout" href="<?php echo($_APP['route']['confirm']) ?>">Acheter</a>
           </div>
