@@ -6,7 +6,7 @@
         </li>
         <li class="secondary-nav">
         <a href="<?php echo($_APP['route']['panier']) ?>">
-            <i class="fas fa-shopping-cart"></i> PANIER
+            <i class="fas fa-shopping-cart"></i><sup><?php if(isset($_SESSION)) echo($_SESSION['panier']) ?></sup> PANIER
         </a>
         </li>
         <li class="secondary-nav">

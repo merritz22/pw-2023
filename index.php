@@ -1,5 +1,30 @@
 <?php
     $_APP = parse_ini_file('env.ini', true);
+    require_once('./databases/PDOConnection.php');
+    require_once('./controllers/AccountFunction.php');
+    require_once('./controllers/CheckoutFunction.php');
+    
+    session_start();
+
+    $db = connection('env.ini');
+    // getUser($_REQUEST['email'],$_REQUEST['pass']);
+    if(isset($_SESSION)){
+      $_SESSION['panier'] = count(getCheckout($db, $_SESSION['user']));
+    }else if (isset($_POST['email'])) {
+      $user = getUser($db,$_POST['email'],$_POST['pass']);
+      // var_dump($user[0]);
+      $panier = getCheckout($db, $user[0]['id']);
+      // var_dump(count($panier));
+      if(count($user) == 0){
+        
+        header("Location:".$_APP['route']['connexion']);
+      }
+      else{
+        $_SESSION['user'] = $user[0]['id'];
+        $_SESSION['panier'] = count($panier);
+      }
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +71,9 @@
         <p><a href="<?php echo($_APP['route']['hommes']) ?>">Acheter maintenant</a></p>
       </div>
     </header>
+    <!-- <div style="height: 100px;margin-left:5%;position:absolute;color:red;background:darkblue;">
+      <?php //var_dump($_SESSION) ?>
+    </div> -->
     <section>
       <div
         class="row"

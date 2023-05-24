@@ -1,8 +1,8 @@
 <?php
-function connection(){
+function connection($link){
     //on utilise une variables pour lire le fichier de connection a la base de donnees
     //ce fichier contient les informations neccessaires pour addresser la base de donnees
-    $_SETTINGS = parse_ini_file('./../env.ini', true);
+    $_SETTINGS = parse_ini_file($link, true);
 
 
     //on utilises PDO pour creer une instance de connection a la base de donnees, les informations sont lus 
