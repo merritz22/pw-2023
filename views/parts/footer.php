@@ -19,7 +19,7 @@
         <h2>
         Copyright <sup>©</sup>
         <a href="https://github.com/merritz22" target="_blank"
-            >Merritz</a
+            >CARLOS</a
         >
         </h2>
     </div>
